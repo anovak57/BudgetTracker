@@ -1,0 +1,18 @@
+﻿# Node / Angular
+node_modules/
+dist/
+.angular/
+.env
+
+# .NET Core
+bin/
+obj/
+.idea/
+*.user
+*.suo
+*.vspx
+*.pdb
+
+# IDE / Logs (optional but recommended)
+.vscode/
+*.log
