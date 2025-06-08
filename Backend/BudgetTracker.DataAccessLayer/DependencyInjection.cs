@@ -1,4 +1,6 @@
 ﻿using BudgetTracker.DataAccessLayer.Data;
+using BudgetTracker.DataAccessLayer.Interfaces;
+using BudgetTracker.DataAccessLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,13 @@ public static class DependencyInjection
         {
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
         });
+
+        services.AddScoped<IBudgetRepository, BudgetRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IRecurringTransactionRepository, RecurringTransactionRepository>();
+        services.AddScoped<ITransactionRepository, TransactionRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IWalletRepository, WalletRepository>();
         
         return services;
     }
