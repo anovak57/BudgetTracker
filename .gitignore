@@ -12,6 +12,7 @@ obj/
 *.suo
 *.vspx
 *.pdb
+**/appsettings*.json
 
 # IDE / Logs (optional but recommended)
 .vscode/
